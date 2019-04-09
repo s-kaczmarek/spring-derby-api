@@ -1,25 +1,35 @@
 package com.example.springderbyapi.student;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
 import java.util.Objects;
+import com.example.springderbyapi.index.Index;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name="students")
 public class Student {
     @Id
     @GeneratedValue
     private Long id;
     private String name;
-    private String passportNumber;
+    private String studentNumber;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "index_number")
+    private Index studentsIndex;
 
     public Student(){
 
     }
 
-    public Student(String name, String passportNumber){
+    public Student(String name, String studentNumber){
         this.name = name;
-        this.passportNumber = passportNumber;
+        this.studentNumber = studentNumber;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
@@ -30,12 +40,16 @@ public class Student {
         this.name = name;
     }
 
-    public String getPassportNumber() {
-        return passportNumber;
+    public String getStudentNumber() {
+        return studentNumber;
     }
 
-    public void setPassportNumber(String passportNumber) {
-        this.passportNumber = passportNumber;
+    public void setStudentNumber(String studentNumber) {
+        this.studentNumber = studentNumber;
+    }
+
+    public void setStudentsIndex(Index studentsIndex) {
+        this.studentsIndex = studentsIndex;
     }
 
     @Override
@@ -43,7 +57,7 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", passportNumber='" + passportNumber + '\'' +
+                ", passportNumber='" + studentNumber + '\'' +
                 '}';
     }
 
@@ -54,11 +68,11 @@ public class Student {
         Student student = (Student) o;
         return Objects.equals(id, student.id) &&
                 name.equals(student.name) &&
-                passportNumber.equals(student.passportNumber);
+                studentNumber.equals(student.studentNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, passportNumber);
+        return Objects.hash(id, name, studentNumber);
     }
 }
