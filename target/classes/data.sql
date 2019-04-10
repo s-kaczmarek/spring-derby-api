@@ -1,1 +1,1 @@
-INSERT INTO students(id,name,studentNumber) VALUES (1,'Jon','ABC12345');
+INSERT INTO students (id,name,student_number) VALUES (1,'John','ABC789456');

@@ -1,8 +1,6 @@
 package com.example.springderbyapi.student;
 
-
 import java.util.Objects;
-import com.example.springderbyapi.index.Index;
 
 import javax.persistence.*;
 
@@ -11,13 +9,12 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue
+    @Column(name="id")
     private Long id;
+    @Column(name="name")
     private String name;
+    @Column(name="student_number")
     private String studentNumber;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "index_number")
-    private Index studentsIndex;
 
     public Student(){
 
@@ -46,10 +43,6 @@ public class Student {
 
     public void setStudentNumber(String studentNumber) {
         this.studentNumber = studentNumber;
-    }
-
-    public void setStudentsIndex(Index studentsIndex) {
-        this.studentsIndex = studentsIndex;
     }
 
     @Override
