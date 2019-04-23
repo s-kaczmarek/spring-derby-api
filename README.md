@@ -1,5 +1,5 @@
 # Spring Derby API
-## Spring api with Derby database
+## List of students
 
 ### Overview of the project
 This project is example of simple rest api created in spring with
