@@ -1,5 +1,5 @@
 # Spring Derby API
-## List of students
+## List of Students with REST API in Spring with in memory database Derby 
 
 ### Overview of the project
 This project is example of simple rest api created in spring with
@@ -28,6 +28,7 @@ Test data are persisted with two methods:
 - service
 
 ### Sources of knowledge
+***
 * https://www.springboottutorial.com/spring-boot-crud-rest-service-with-jpa-hibernate
 * https://www.vogella.com/tutorials/ApacheDerby/article.html
 #### Relations
