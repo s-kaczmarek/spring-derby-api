@@ -55,7 +55,7 @@ Send request with ***GET*** method to address:
 http://localhost:7070/students
 ```
 
-1. Get student by id
+2. Get student by id
 
 Send request with ***GET*** method to address:
 ```
@@ -66,7 +66,7 @@ Where {id} is just number of id like:
 http://localhost:7070/students/1
 ```
 
-2. Add new student
+3. Add new student
 
 Send request with ***POST*** method to address:
 ```
